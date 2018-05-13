@@ -1,0 +1,11 @@
+.idea/
+.DS_STORE
+node_modules/
+build/
+coverage/
+*.swp
+yarn-debug.log*
+yarn-error.log*
+.out
+stats.json
+.env
