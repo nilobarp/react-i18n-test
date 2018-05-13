@@ -1,6 +1,3 @@
 export const messages = {
-  activationDeadline: {
-    id: "activationDeadline",
-    message: "You must activate your account before {deadline}"
-  }
+  activationDeadline: "You must activate your account before {deadline}"
 };

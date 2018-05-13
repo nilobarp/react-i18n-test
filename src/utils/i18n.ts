@@ -16,11 +16,11 @@ export function trConfigure(messages, locale) {
 
 export function tr(messageId, vars?: ITranslationPlaceholder) {
   return intl
-    .get(`${moduleMessages[messageId].id}`, vars)
-    .d(formatDefaultMessage(`${moduleMessages[messageId].message}`, vars));
+    .get(messageId, vars)
+    .d(formatDefaultMessage(moduleMessages[messageId], vars));
 }
 
-const formatDefaultMessage = (message: string, vars: object) => {
+export function formatDefaultMessage(message: string, vars: object) {
   // check if this is a plural message
   if (message.match(/{.+,(\s+)?plural(\s+)?,/) !== null) {
     const formatter = new IntlMessageFormat(message, "en-US");
@@ -34,4 +34,4 @@ const formatDefaultMessage = (message: string, vars: object) => {
     }
     return message;
   }
-};
+}
